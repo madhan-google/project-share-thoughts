@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrationActivity">
+
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REGISTRATION"
+                android:textColor="@color/text1"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/rought_usericon2" />
+
+        <ImageView
+            android:id="@+id/choose_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@id/user_image"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="120dp"
+            android:src="@drawable/ic_camera" />
+
+        <ImageView
+            android:id="@+id/edit_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@id/user_image"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="120dp"
+            android:src="@drawable/ic_edit"
+            android:visibility="gone" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_image"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="5dp">
+
+            <EditText
+                android:id="@+id/username_text"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:hint="Name"
+                android:importantForAutofill="yes"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/text1"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardview1"
+            android:layout_margin="10sp"
+            app:cardCornerRadius="5dp">
+
+            <EditText
+                android:id="@+id/dob_text"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:hint="Date of birth"
+                android:importantForAutofill="yes"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/text1"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/cardview2"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            app:cardCornerRadius="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Gender:"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/id_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="genderSelection"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/id_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="genderSelection"
+                    android:text="Female" />
+
+                <RadioButton
+                    android:id="@+id/id_others"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="genderSelection"
+                    android:text="Others" />
+
+            </RadioGroup>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardview3"
+            android:layout_margin="10sp"
+            app:cardCornerRadius="5dp">
+
+            <EditText
+                android:id="@+id/mailid_text"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/rough_icon"
+                android:background="@android:color/transparent"
+                android:hint="Mail ID"
+                android:importantForAutofill="yes"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/text1"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardview4"
+            android:layout_margin="10sp"
+            app:cardCornerRadius="5dp">
+
+            <EditText
+                android:id="@+id/password_text"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/rough_icon"
+                android:background="@android:color/transparent"
+                android:hint="Password"
+                android:importantForAutofill="yes"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/text1"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardview5"
+            android:layout_margin="10sp"
+            app:cardCornerRadius="5dp">
+
+            <EditText
+                android:id="@+id/cpassword_text"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/rough_icon"
+                android:background="@android:color/transparent"
+                android:hint="Confirm Password"
+                android:importantForAutofill="yes"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/text1"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/register_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardview6"
+            android:layout_marginLeft="60dp"
+            android:text="register" />
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardview6"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:text="cancel" />
+
+    </RelativeLayout>
+
+</ScrollView>
